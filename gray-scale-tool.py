@@ -10,8 +10,8 @@ path_p = input("Current path: ")
 
 dstpath_p = input("Destination path: ")
 
-path = r"{}".format(path_p)  # Source Folder
-dstpath = r"{}".format(dstpath_p)  # Destination Folder
+path = f"{path_p}"
+dstpath = f"{dstpath_p}"
 
 try:
     makedirs(dstpath)
@@ -29,7 +29,7 @@ for image in files:
         dstPath = join(dstpath, image)
         cv2.imwrite(dstPath, gray)
     except Exception as e:
-        print("{} is not converted".format(image))
+        print(f"{image} is not converted")
         print(e)
 
 for fil in glob.glob("*.jpg"):
